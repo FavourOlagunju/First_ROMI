@@ -1,8 +1,10 @@
-from wpilib import TimedRobot, Joystick, Spark
-import os
 import wpilib
+from wpilib import TimedRobot, Spark, Joystick
+import os
 from drivetrain import Drivetrain
 import time
+from linefollower import LineFollower
+
 
 class MyRobot(TimedRobot):
 
@@ -35,8 +37,7 @@ class MyRobot(TimedRobot):
         '''This is called every cycle while the robot is in autonomous.'''
 
     def teleopInit(self):
-
-    pass
+        pass
 
     def teleopPeriodic(self):
         forward = self.controller.getRawAxis(0)

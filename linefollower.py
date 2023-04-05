@@ -1,20 +1,19 @@
-from wpilib import TimedRobot, Joystick, Spark
-from wpilib.drive import DifferentialDrive
 from wpilib import DigitalInput
 
 class LineFollower:
-
-
-#use linefollower in autonomousperiodic
-
-
-
    def __init__(self, drivetrain):
-       #initialize sensors
-       # 8 and 9
-
-
-
+      self.drivetrain=drivetrain
+      self.left_sensor= DigitalInput(8)
+      self.right_sensor= DigitalInput(9)
    def run(self):
-      #logic ,
+      left_data= self.left_sensor.get()
+      right_data= self.right_sensor.get()
+      if left_data== True:
+         self.drivetrain.move(0.5,5)
+      elif right_data== True:
+         self.drivetrain.move(0.5,-5)
+      elif left_data== True and right_data == True:
+         self.drivetrain.move(0,90)
 
+      else:
+         self.drivetrain.move(1,0)
