@@ -5,7 +5,7 @@ from drivetrain import Drivetrain
 import time
 from linefollower import LineFollower
 
-class MyRobot(TimedRobot):
+class MyRobot(TimedRobot) :
 
     def robotInit(self):
         '''This method is called as the robot turns on and is often used to setup the
