@@ -1,12 +1,8 @@
-#received help from Eric and Dr.Bardoe
-
-import wpilib
-from wpilib import TimedRobot, Joystick
+from wpilib import TimedRobot, Joystick, Spark
 import os
+import wpilib
 from drivetrain import Drivetrain
 import time
-from linefollower import LineFollower
-
 
 class MyRobot(TimedRobot):
 
@@ -39,12 +35,15 @@ class MyRobot(TimedRobot):
         '''This is called every cycle while the robot is in autonomous.'''
 
     def teleopInit(self):
-        pass
+
+    pass
 
     def teleopPeriodic(self):
         forward = self.controller.getRawAxis(0)
         rotate = self.controller.getRawAxis(1)
         self.drivetrain.arcadeDrive(forward, rotate)
+        #poll controller
+        #invoke drivetrain.move
 
 
 if __name__ == "__main__":
