@@ -1,3 +1,4 @@
+#recieved help from Eric and Dr.Bardoe
 from wpilib import TimedRobot, Joystick
 import os
 import wpilib
