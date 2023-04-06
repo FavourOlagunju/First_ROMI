@@ -1,8 +1,8 @@
-from wpilib import TimedRobot, Joystick, Spark
+from wpilib import TimedRobot, Joystick
 import os
 import wpilib
 from drivetrain import Drivetrain
-import time
+from linefollower import LineFollower
 
 class MyRobot(TimedRobot):
 
@@ -17,33 +17,24 @@ class MyRobot(TimedRobot):
     def robotPeriodic(self):
         '''This is called every cycle of the code. In general the code is loop
         through every .02 seconds.'''
-
-
-    pass
+        pass
 
     def autonomousInit(self):
         '''This is called once when the robot enters autonomous mode.'''
-
-    1
-    pass
+        pass
 
     def autonomousPeriodic(self):
-
-        while True:
-            self.linefollower.run()
-            time.sleep(0,3)
-        '''This is called every cycle while the robot is in autonomous.'''
+        pass
 
     def teleopInit(self):
-
-    pass
+        pass
 
     def teleopPeriodic(self):
         forward = self.controller.getRawAxis(0)
         rotate = self.controller.getRawAxis(1)
         self.drivetrain.arcadeDrive(forward, rotate)
-        #poll controller
-        #invoke drivetrain.move
+        self.drivetrain.move(forward,rotate)
+
 
 
 if __name__ == "__main__":
