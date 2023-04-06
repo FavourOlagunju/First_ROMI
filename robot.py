@@ -1,5 +1,7 @@
+#received help from Eric and Dr.Bardoe
+
 import wpilib
-from wpilib import TimedRobot, Spark, Joystick
+from wpilib import TimedRobot, Joystick
 import os
 from drivetrain import Drivetrain
 import time
@@ -43,8 +45,6 @@ class MyRobot(TimedRobot):
         forward = self.controller.getRawAxis(0)
         rotate = self.controller.getRawAxis(1)
         self.drivetrain.arcadeDrive(forward, rotate)
-        #poll controller
-        #invoke drivetrain.move
 
 
 if __name__ == "__main__":
