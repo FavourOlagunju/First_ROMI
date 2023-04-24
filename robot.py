@@ -25,7 +25,7 @@ class MyRobot(TimedRobot):
         pass
 
     def autonomousPeriodic(self):
-        pass
+        self.linefollower.run()
 
     def teleopInit(self):
         pass
@@ -33,9 +33,8 @@ class MyRobot(TimedRobot):
     def teleopPeriodic(self):
         forward = self.controller.getRawAxis(0)
         rotate = self.controller.getRawAxis(1)
-        self.drivetrain.arcadeDrive(rotate, forward)
+        # Eric yang helped me resolve teleop crash issue
         self.drivetrain.move(rotate, forward)
-
 
 if __name__ == "__main__":
     os.environ["HALSIMWS_HOST"] = "10.0.0.2"
