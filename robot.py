@@ -33,9 +33,8 @@ class MyRobot(TimedRobot):
     def teleopPeriodic(self):
         forward = self.controller.getRawAxis(0)
         rotate = self.controller.getRawAxis(1)
-        self.drivetrain.arcadeDrive(forward, rotate)
-        self.drivetrain.move(forward,rotate)
-
+        self.drivetrain.arcadeDrive(rotate, forward)
+        self.drivetrain.move(rotate, forward)
 
 
 if __name__ == "__main__":

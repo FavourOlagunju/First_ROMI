@@ -11,7 +11,7 @@ class LineFollower:
       if left_data and not right_data:
          self.drivetrain.move(0.05, -0.6)
       elif right_data and not left_data:
-         self.drivetrain.move(-0.05,-0.6)
+         self.drivetrain.move(0.05,0.6)
       else:
-         self.drivetrain.move(0, 0.4)
+         self.drivetrain.move(0.4, 0)
 

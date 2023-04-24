@@ -1,5 +1,4 @@
-
-from wpilib import  Spark
+from wpilib import Spark
 from wpilib.drive import DifferentialDrive
 
 class Drivetrain:
@@ -10,3 +9,4 @@ class Drivetrain:
 
     def move(self, forward, rotate):
         self.drivetrain.arcadeDrive(forward, rotate)
+
